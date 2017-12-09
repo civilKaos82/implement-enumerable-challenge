@@ -33,6 +33,17 @@ def reject(array)
 end
 
 def select(array)
+  i = 0
+  output_array = []
+  while i < array.length
+    if yield(array[i]) == true
+      output_array << array[i]
+      i += 1
+    else
+      i += 1
+    end
+  end
+  output_array
 end
 
 # Coding all? is optional.
