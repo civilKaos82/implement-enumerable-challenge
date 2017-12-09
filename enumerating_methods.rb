@@ -18,6 +18,15 @@ def find(array)
 end
 
 def map(array)
+  i = 0
+  output_array = []
+  while i < array.length
+    if block_given?
+      output_array << yield(array[i])
+    end
+    i += 1
+  end
+  output_array
 end
 
 def reject(array)
